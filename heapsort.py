@@ -1,10 +1,5 @@
 #!/usr/bin/python2
 
-def swap(array, i, j):
-    tmp = array[i]
-    array[i] = array[j]
-    array[j] = tmp
-
 def heapify(array):
     """ Build heap """
     # Middle in array
@@ -35,7 +30,7 @@ def heap_sort(array):
     end = len(array) - 1
     while end > 0:
         # swap biggest node with end node
-        swap(array, end, 0)
+        array[end] , array[0] = array[0] , array[end]
         # make sure first node is biggest
         perc_down(array, 0, end - 1)
         end -= 1
